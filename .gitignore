@@ -1,6 +1,5 @@
 node_modules
 .env
-.encryptedKey.json
 coverage
 coverage.json
 typechain
@@ -13,5 +12,3 @@ proposals.json
 typechain-types
 gas-report.txt
 deployments
-.video.md
-.article.md 
