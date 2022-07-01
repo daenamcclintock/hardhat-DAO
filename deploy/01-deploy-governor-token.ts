@@ -27,6 +27,7 @@ const deployGovernanceToken: DeployFunction = async function (hre: HardhatRuntim
   log("Delegated!")
 }
 
+// Function to delegate voting power for the token
 const delegate = async (governanceTokenAddress: string, delegatedAccount: string) => {
   const governanceToken = await ethers.getContractAt("GovernanceToken", governanceTokenAddress)
   const transactionResponse = await governanceToken.delegate(delegatedAccount)
