@@ -15,10 +15,10 @@ const deployGovernanceToken: DeployFunction = async function (hre: HardhatRuntim
     from: deployer,
     args: [],
     log: true,
-    // we need to wait if on a live network so we can verify properly
+    // if on a live network, we need to wait so we can verify properly
     waitConfirmations: networkConfig[network.name].blockConfirmations || 1,
   })
-  log(`GovernanceToken at ${governanceToken.address}`)
+  log(`***** GovernanceToken deployed to: ${governanceToken.address} *****`)
   if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
     await verify(governanceToken.address, [])
   }
