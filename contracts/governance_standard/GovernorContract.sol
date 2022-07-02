@@ -34,21 +34,11 @@ contract GovernorContract is
     GovernorTimelockControl(_timelock)
   {}
 
-  function votingDelay()
-    public
-    view
-    override(IGovernor, GovernorSettings)
-    returns (uint256)
-  {
+  function votingDelay() public view override(IGovernor, GovernorSettings) returns (uint256) {
     return super.votingDelay();
   }
 
-  function votingPeriod()
-    public
-    view
-    override(IGovernor, GovernorSettings)
-    returns (uint256)
-  {
+  function votingPeriod() public view override(IGovernor, GovernorSettings) returns (uint256) {
     return super.votingPeriod();
   }
 
@@ -90,12 +80,7 @@ contract GovernorContract is
     return super.propose(targets, values, calldatas, description);
   }
 
-  function proposalThreshold()
-    public
-    view
-    override(Governor, GovernorSettings)
-    returns (uint256)
-  {
+  function proposalThreshold() public view override(Governor, GovernorSettings) returns (uint256) {
     return super.proposalThreshold();
   }
 
@@ -118,12 +103,7 @@ contract GovernorContract is
     return super._cancel(targets, values, calldatas, descriptionHash);
   }
 
-  function _executor()
-    internal
-    view
-    override(Governor, GovernorTimelockControl)
-    returns (address)
-  {
+  function _executor() internal view override(Governor, GovernorTimelockControl) returns (address) {
     return super._executor();
   }
 
